@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Turracher Höhe 2027 — Családi síelés</title>
+  <meta name="description" content="Családi síút-terv Turracher Höhere 2027 telén — chaletek, síbérlet, utazás és teljes költségbecslés." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="noise"></div>
+
+  <header class="hero" id="overview">
+    <nav class="nav">
+      <a class="brand" href="#overview">TH<span>27</span></a>
+      <div class="navlinks">
+        <a href="#dates">Időpontok</a>
+        <a href="#stays">Szállások</a>
+        <a href="#calculator">Költségek</a>
+        <a href="#travel">Utazás</a>
+        <a href="#compare">Összehasonlítás</a>
+      </div>
+    </nav>
+
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="eyebrow">TURRACHER HÖHE · AUSZTRIA · 2027</div>
+      <h1>Családi <em>síelés</em><br>az Alpokban</h1>
+      <p class="hero-sub">4 éjszaka · saját chalet · szauna · jacuzzi · 4 sínap · hegyi panoráma</p>
+      <div class="hero-stats">
+        <div><strong>1 763 m</strong><span>hegyi régió</span></div>
+        <div><strong>~495 km</strong><span>Budapesttől</span></div>
+        <div><strong>5</strong><span>chalet opció</span></div>
+      </div>
+      <a class="primary-btn" href="#stays">Szállások megnézése ↓</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="dates">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow dark">MIKOR MENJÜNK?</div>
+          <h2>Három lehetséges időpont</h2>
+        </div>
+        <p>Mindhárom opció 4 éjszaka és 4 teljes sínap. A 2025/26-os szezon alapján jan. 25. után főszezon kezdődött, ezért a második és harmadik időpont várhatóan drágább kategória.</p>
+      </div>
+
+      <div class="date-grid" id="dateGrid">
+        <button class="date-card active" data-date="0">
+          <span class="date-index">01</span>
+          <small>JANUÁR</small>
+          <strong>20 → 24</strong>
+          <span>2027 · szerda–vasárnap</span>
+          <b>Középszezon esélyes</b>
+        </button>
+        <button class="date-card" data-date="1">
+          <span class="date-index">02</span>
+          <small>JANUÁR</small>
+          <strong>27 → 31</strong>
+          <span>2027 · szerda–vasárnap</span>
+          <b>Főszezon esélyes</b>
+        </button>
+        <button class="date-card" data-date="2">
+          <span class="date-index">03</span>
+          <small>FEBRUÁR</small>
+          <strong>03 → 07</strong>
+          <span>2027 · szerda–vasárnap</span>
+          <b>Főszezon esélyes</b>
+        </button>
+      </div>
+    </section>
+
+    <section class="section warm" id="stays">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow dark">CH A L E T   S H O R T L I S T</div>
+          <h2>Öt erős szállásopció</h2>
+        </div>
+        <p>A cél: legalább 8 fő, saját wellness, és minél jobb pályaelérés. A 2027-es árak még nem mindenhol publikusak, ezért itt konzervatív téli becsléseket használunk.</p>
+      </div>
+
+      <div class="stay-grid" id="stayGrid"></div>
+    </section>
+
+    <section class="section dark-section" id="calculator">
+      <div class="section-head light">
+        <div>
+          <div class="eyebrow">KÖLTSÉGTERVEZŐ</div>
+          <h2>Mennyibe kerülne<br>az egész családi út?</h2>
+        </div>
+        <p>Állítsátok be a létszámot, autók számát és étkezési szintet. A kalkulátor automatikusan frissíti a teljes és az egy főre jutó költséget.</p>
+      </div>
+
+      <div class="calc-wrap">
+        <div class="controls-panel">
+          <div class="control-row">
+            <label>Szállás</label>
+            <select id="accommodationSelect"></select>
+          </div>
+          <div class="split">
+            <div class="control-row">
+              <label>Felnőttek</label>
+              <input id="adults" type="number" min="1" max="10" value="8">
+            </div>
+            <div class="control-row">
+              <label>Gyerekek</label>
+              <input id="children" type="number" min="0" max="8" value="2">
+            </div>
+          </div>
+          <div class="split">
+            <div class="control-row">
+              <label>Autók száma</label>
+              <select id="cars"><option value="2">2 autó</option><option value="3" selected>3 autó</option></select>
+            </div>
+            <div class="control-row">
+              <label>Étkezés</label>
+              <select id="foodLevel">
+                <option value="30">Takarékos · €30/nap</option>
+                <option value="45" selected>Kényelmes · €45/nap</option>
+                <option value="65">Bőkezű · €65/nap</option>
+              </select>
+            </div>
+          </div>
+          <div class="split">
+            <div class="control-row">
+              <label>Fogyasztás (l/100 km)</label>
+              <input id="consumption" type="number" value="7.5" step="0.1">
+            </div>
+            <div class="control-row">
+              <label>Benzin (€ / l)</label>
+              <input id="fuelPrice" type="number" value="1.60" step="0.05">
+            </div>
+          </div>
+          <div class="tiny-note">Alapfeltevés: 990 km oda-vissza · 4 éjszaka · 5 naptári nap · 4 napos síbérlet · €50/autó útdíj/matrica · 400 Ft/€.</div>
+        </div>
+
+        <div class="result-panel">
+          <div class="result-top">
+            <div>
+              <small>BECSÜLT TELJES KÖLTSÉG</small>
+              <strong id="grandTotal">€0</strong>
+              <span id="grandTotalHuf">0 Ft</span>
+            </div>
+            <div class="per-person">
+              <small>EGY FŐRE</small>
+              <strong id="perPerson">€0</strong>
+              <span id="perPersonHuf">0 Ft</span>
+            </div>
+          </div>
+          <div class="cost-bars">
+            <div class="cost-line"><span>Szállás</span><b id="costAccommodation">€0</b></div>
+            <div class="bar"><i id="barAccommodation"></i></div>
+            <div class="cost-line"><span>Síbérlet</span><b id="costPass">€0</b></div>
+            <div class="bar"><i id="barPass"></i></div>
+            <div class="cost-line"><span>Utazás</span><b id="costTravel">€0</b></div>
+            <div class="bar"><i id="barTravel"></i></div>
+            <div class="cost-line"><span>Étkezés</span><b id="costFood">€0</b></div>
+            <div class="bar"><i id="barFood"></i></div>
+          </div>
+          <div class="estimate-chip">Becslés · nem foglalási ajánlat</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="travel">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow dark">ÚTON A HEGYEKBE</div>
+          <h2>Budapest → Turracher Höhe</h2>
+        </div>
+        <p>Közúton kb. 495 km egy irány, normál forgalomban nagyjából 5–5,5 óra. Téli körülmények között érdemes 6 órás ajtótól ajtóig idővel kalkulálni.</p>
+      </div>
+
+      <div class="travel-grid">
+        <div class="route-card">
+          <div class="route-line">
+            <div class="route-point city"><span>HU</span><strong>Budapest</strong><small>indulás reggel</small></div>
+            <div class="route-track"><i></i><b>~495 km</b><i></i></div>
+            <div class="route-point mountain"><span>AT</span><strong>Turracher Höhe</strong><small>1 763 m</small></div>
+          </div>
+          <div class="route-metrics">
+            <div><span>⏱</span><b>5–6 óra</b><small>egy irány</small></div>
+            <div><span>↔</span><b>~990 km</b><small>oda-vissza</small></div>
+            <div><span>⛽</span><b id="travelFuelPreview">~223 €</b><small>3 autóval*</small></div>
+          </div>
+        </div>
+
+        <div class="pass-card">
+          <small>SÍBÉRLET · 4 NAP</small>
+          <h3>2027-es ár még nem végleges</h3>
+          <div class="pass-price"><strong>€275</strong><span>/ felnőtt becslés</span></div>
+          <div class="pass-price secondary"><strong>€138</strong><span>/ gyerek becslés</span></div>
+          <p>Referencia: 2025/26-ban 4 napos felnőtt jegy €255 volt középszezonban és €264 főszezonban.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section warm" id="compare">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow dark">GYORS DÖNTÉS</div>
+          <h2>Melyiket választanánk?</h2>
+        </div>
+      </div>
+
+      <div class="podium">
+        <div class="podium-card second">
+          <span>🥈</span><small>LEGJOBB PÁLYAELÉRÉS</small><h3>Golden Eagle</h3><p>8 főre erős, gyakorlatilag a pályán. Ski-in / ski-out, szauna, kültéri hot tub.</p>
+        </div>
+        <div class="podium-card first">
+          <span>🥇</span><small>LEGJOBB 10 FŐRE</small><h3>Mountain Lodge</h3><p>10 fő, privát wellness, 475 m a pálya, 360° panoráma és igazi hegyi chalet hangulat.</p>
+        </div>
+        <div class="podium-card third">
+          <span>🥉</span><small>LEGJOBB PANORÁMA</small><h3>Naturchalets</h3><p>Modern, elegáns, saját hot tub és szauna. Erős wellness + kilátás kombináció.</p>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Szállás</th><th>Fő</th><th>Pálya</th><th>Szauna</th><th>Jacuzzi</th><th>4 éj becslés</th><th>Ajánlás</th></tr></thead>
+          <tbody id="compareTable"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section timeline-section">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow dark">5 NAP / 4 ÉJSZAKA</div>
+          <h2>Egy lehetséges menetrend</h2>
+        </div>
+      </div>
+      <div class="timeline" id="timeline"></div>
+    </section>
+  </main>
+
+  <footer>
+    <div>
+      <strong>TURRACHER HÖHE 2027</strong>
+      <p>Családi síút · előzetes döntési prospektus</p>
+    </div>
+    <p class="footer-note">Az árak becslések. A 2027-es szállás-, síbérlet-, üzemanyag- és étkezési árak változhatnak. Foglalás előtt minden szolgáltatónál ellenőrizni kell az aktuális árat és elérhetőséget.</p>
+  </footer>
+
+  <div class="floating-total">
+    <span>Jelenlegi becslés</span>
+    <strong id="floatingTotal">0 Ft / fő</strong>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
